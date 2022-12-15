@@ -1,0 +1,18 @@
+axios
+      .post(`http://northwind.now.sh/api/categories`,this.kategorija)
+      .then(response=>{
+        this.kategorija=response.data
+        this.poruka={
+          show:true,
+          text:`Uspešno dodavanje nove kategorije`,
+          class:"success"
+        }
+        this.DohvatiSveKategorije()
+      })
+      .catch(error=>{
+        this.poruka={
+          show:true,
+          text:`Greška:${error}`,
+          class:"error"
+        }
+      })
